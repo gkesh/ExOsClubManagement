@@ -1,0 +1,150 @@
+/*Update Section*/
+/* Full-width input fields */
+div>button {
+	background-color: gray;
+	border-radius: 3px;
+	color: white;
+	padding: 2vw 3vw;
+	margin-top:2vh;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	-moz-transition: all 0.15s;
+	-webkit-transition: all 0.15s;
+	transition: all 0.15s;
+}
+
+div>button:hover {
+	-webkit-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
+}
+
+/* Extra styles for the cancel button */
+.updatebtn{
+	width: auto;
+    padding: 1.5vh 2vw;
+    background-color: gray;
+	float:left;
+	margin-left:1.3vw;
+}
+.cancelbtn {
+    width: auto;
+	height:auto;
+	float:right;
+    padding: 1.5vh 2vw;
+    background-color: gray;
+	margin-right:1.3vw;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 0 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 15vw;
+	height:15vw;
+    border-radius: 50%;
+	border: 4px solid white;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
+}
+
+.container {
+    padding: 16px;
+}
+
+.psw {
+	color:black;
+	font-weight:600;
+    float: right;
+    padding-top: 16px;
+}
+.psw:hover{
+	cursor:pointer;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: auto; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 3vw;
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-image: url('../images/formback.jpg');
+	background-repeat:repeat-x repeat-y;
+    margin: 0 auto 25% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+	height:auto;
+}
+
+/* The Close Button (x) */
+.close {
+    position: relative;
+    left: 1vw;
+    top: 0;
+    color: gray;
+    font-size: 35px;
+    font-weight: bold;
+	-moz-transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+label {
+   cursor: pointer;
+   font-size:1.5vh;
+   opacity:0.9;
+   font-weight:500;
+}
+
+#profileimage {
+   opacity: 0;
+   position: absolute;
+   z-index: -1;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn {
+       display: block;
+       float: none;
+    }
+    .updatebtn {
+       width: 100%;
+    }
+}

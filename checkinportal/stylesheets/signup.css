@@ -1,0 +1,212 @@
+@charset "utf-8";
+@import "compass/css3";
+@mixin transition($in) {
+	transition:$in;
+	-webkit-transition:$in;
+	-moz-transition:$in;
+	-o-transition:$in;
+	-ms-transition:$in;
+}
+
+body{
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight:550;
+	font-family: "Century Gothic"; 
+	margin:0;
+	background:url("../images/backgrounds/form-background.jpg") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+#titlebar{
+	margin-top:2.5vh;
+	height:15vh;
+	background:none;
+	width: 100%;
+	margin-bottom:2.5vh;
+	vertical-align: middle;
+}
+#titlebar img{
+	height:100%;
+	width:auto;
+}
+#sgnfrm{
+	padding-top:3vh;
+	padding-bottom:3vh;
+	margin-bottom:2vh;
+	width:35vw;
+	height:auto;
+	border-radius:3vh;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	background-color: rgba(255,255,255,0.2);
+}
+.fn{
+	background-image:url("../images/name-icon.png");
+	background-size: auto 3vh;
+	background-position: 1vw 1.2vh;
+	background-repeat: no-repeat;
+	padding-left:6.5vh;
+}
+.address{
+	background-image:url("../images/address-icon2.png");
+	background-size: auto 3vh;
+	background-position: 1vw 1.2vh;
+	background-repeat: no-repeat;
+	padding-left:6.5vh;
+}
+.country{
+	background-image:url("../images/country-icon2.png");
+	background-size: auto 3vh;
+	background-position: 1vw 1.2vh;
+	background-repeat: no-repeat;
+	padding-left:6.5vh;
+}
+.phone{
+	background-image:url("../images/phone-icon2.png");
+	background-size: auto 3vh;
+	background-position: 1vw 1.2vh;
+	background-repeat: no-repeat;
+	padding-left:6.5vh;
+}
+.email{
+	background-image:url("../images/email-icon2.png");
+	background-size: auto 3vh;
+	background-position: 1vw 1.2vh;
+	background-repeat: no-repeat;
+	padding-left:6.5vh;
+}
+.dob{
+	background-image:url("../images/dob-icon2.png");
+	background-size: auto 3vh;
+	background-position: 1vw 1.2vh;
+	background-repeat: no-repeat;
+	padding-left:6.5vh;
+	margin-bottom:2vh;
+}
+.username{
+	background-image:url("../images/username-icon.png");
+	background-size: auto 3vh;
+	background-position: 1vw 1.2vh;
+	background-repeat: no-repeat;
+	padding-left:6.5vh;
+}
+.password{
+	background-image:url("../images/password-icon.png");
+	background-size: auto 3vh;
+	background-position: 1vw 1.2vh;
+	background-repeat: no-repeat;
+	padding-left:6.5vh;
+}
+.password::placeholder{
+	letter-spacing:0.1vw;
+}
+input[type=text], input[type=password], input[type=email], input[type=number]{
+	height:5.5vh;
+	width:80%;
+	margin-top:0.6vh;
+	border: 1px solid;
+	border-color: lightgray;
+	border-radius: 3px;
+}
+@media only screen and (max-width: 700px) {
+	#sgnfrm{
+		width:40vw;
+	}
+   input[type=text], input[type=password], input[type=email], input[type=number]{
+		width:60%;
+   }
+}
+input[type=text], input[type=password], input[type=email], input[type=number]::placeholder{
+	font-size:2.3vh;
+}
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label {
+    color: $DarkBrown;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+}
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    -moz-border-radius:  50%;
+    border-radius:  50%;
+}
+
+input[type="radio"] + label span {
+     background-color:white;
+}
+
+input[type="radio"]:checked + label span{
+     background-color:black;
+}
+
+input[type="radio"] + label span,
+input[type="radio"]:checked + label span {
+  -webkit-transition:background-color 0.4s linear;
+  -o-transition:background-color 0.4s linear;
+  -moz-transition:background-color 0.4s linear;
+  transition:background-color 0.4s linear;
+}
+.tologin{
+	cursor:pointer;
+	opacity:0.8;
+}
+.btn{
+	margin-top:1vh;
+}
+#lgina{
+	opacity:0.5;
+}
+[data-wipe] {
+  display: inline-block;
+  padding: 1.5vh 2vw;
+  text-decoration: none;
+  position: relative;
+  border: 2px solid black;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: left;
+  color: black;
+  overflow: hidden;
+}
+[data-wipe]:before, [data-wipe]:after {
+  content: attr(data-wipe);
+  padding-top: inherit;
+  padding-bottom: inherit;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  color: white;
+  background: black;
+}
+[data-wipe]:before {
+  left: 0;
+  text-indent: 2vw;
+  width: 0;
+}
+[data-wipe]:after {
+  padding-left: inherit;
+  padding-right: inherit;
+  left: 100%;
+  text-indent: calc(-100% - 0.1em);
+  transition: 0.5s ease-in-out;
+}
+[data-wipe]:hover:before {
+  width: 100%;
+  transition: width 0.5s ease-in-out;
+}
+[data-wipe]:hover:after {
+  left: 0;
+  text-indent: 0;
+  transition: 0s 0.5s ease-in-out;
+}

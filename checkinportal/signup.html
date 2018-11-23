@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sign Up</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/signup.css"/>
+<script src="scripts/jquery.js"></script>
+<script language="javascript" type="text/javascript">
+	function checkCountry(){
+		var1 = document.getElementById("cntry").value;
+		if(var1==-1){
+			alert("Please select a country");
+			document.getElementById("cntry").style="border-color : red";
+		}
+	}
+	function submitform(){
+		document.getElementById("formdata").submit();
+	}
+	function setdateformat(){
+		$("#dob").keyup(function(e){
+			if(e.keyCode==8){
+				return;
+			}else{
+				var dt = document.getElementById("dob").value;
+				var len = dt.length;
+				if(len==4||len==7){
+					document.getElementById("dob").value=dt+"-";
+				}
+			}
+		});
+	}
+	function checkdate(){
+		var dta = document.getElementById("dob").value.split("-");
+		var dt = [parseInt(dta[0]),parseInt(dta[1]),parseInt(dta[2])];
+		var dm = new Date(dt[0], dt[1], 0).getDate();
+		if((dt[0]>2017||dt[0]<1900)||(dt[1]<1||dt[1]>12)||(dt[2]>dm||dt[2]<1)){
+			document.getElementById("dob").style="border-color:red";
+		}else{
+			document.getElementById("dob").style="border-color:lightgray";
+		}
+	}
+	</script>
+</head>
+
+<body>
+<div id="wrapper">
+	<center>
+	<div id="titlebar">
+		<img src="images/header.png"/>
+	</div>
+	</center>
+	<center>
+	<div id="sgnfrm">
+	<form name="sgnin" id="formdata" action="scripts/enterusertodb.php" method="POST">
+		<input type="text" name="full_name" class="fn" placeholder="Name" /><br/>
+		<input type="text" name="address" class="address" placeholder="Address" /><br/>
+		<input type="text" name="country" class="country" placeholder="Country" /><br/>
+		<input type="number" name="phone" class="phone" placeholder="Phone No." /><br/>
+		<input type="email" name="email" class="email" placeholder="Email" /><br/>
+		<input type="text" name="username" class="username" placeholder="Username" /><br/>
+		<input type="password" name="password" class="password" placeholder="••••••••••" /><br/>
+		<input type="text" name="dob" id="dob" class="dob" placeholder="YYYY-MM-DD" onkeyup="setdateformat()" onblur="checkdate()"/><br/>
+		<input type="radio" id="radio01" name="gender" value="Male"/>
+		<label for="radio01" style="color:black; opacity:0.8; font-size:2.5vh; margin-right:2.5vw;"><span></span>&nbsp;Male</label>
+		<input type="radio" id="radio02" name="gender" value="Female"/>
+		<label for="radio02" style="color:black; opacity:0.8; font-size:2.5vh;"><span></span>&nbsp;Female</label><br/>
+		<a href="#" onclick="submitform()" class="btn" style="margin-top:3vh" data-wipe=" Sign Up "> Sign Up </a><br/>
+    </form>
+	</div>
+	<span id="lgina">Already have an account? <span class="tologin" onclick="window.location.href='index.php'"><b>Log in</b></span></span>
+	<center>
+</div>
+</body>
+</html>
