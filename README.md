@@ -19,3 +19,4 @@ Minor Features:
 All the times and dates are automatically recorded in the database for events and meetings and the system also greets the attendees.
 
 This is a labor of love and sadly no framework was used.
+ Create a Database named exos in the xampp mysql db.
