@@ -1,4 +1,4 @@
-# ClubInformationSystem
+# ClubIS
 
 This is basically a fully functional club information management system.
 
